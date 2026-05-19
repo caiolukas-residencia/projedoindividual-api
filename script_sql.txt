@@ -1,7 +1,7 @@
 create database projeto_individual_carros;
 
 create table cliente(
-	id SERIAL primary key,
+	id UUID primary key,
 	nome VARCHAR(200) not null,
 	telefone VARCHAR(14) not null,
 	cpf VARCHAR(14) not null unique,
@@ -9,7 +9,7 @@ create table cliente(
 )
 
 create table veiculo(
-	id SERIAL primary key,
+	id UUID primary key,
 	cliente_id SERIAL,
 	marca VARCHAR(50) not null,
 	modelo VARCHAR(50) not null,
