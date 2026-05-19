@@ -1,0 +1,23 @@
+create database projeto_individual_carros;
+
+create table cliente(
+	id SERIAL primary key,
+	nome VARCHAR(200) not null,
+	telefone VARCHAR(14) not null,
+	cpf VARCHAR(14) not null unique,
+	email VARCHAR(100) not null
+)
+
+create table veiculo(
+	id SERIAL primary key,
+	cliente_id SERIAL,
+	marca VARCHAR(50) not null,
+	modelo VARCHAR(50) not null,
+	ano INT not null,
+	valor DECIMAL(10, 2) not null,
+	placa VARCHAR(7) not null unique,
+	maximo_desconto DECIMAL(10,2) not null,
+	vendido BOOLEAN not null,
+	valor_venda DECIMAL(10,2),
+	CONSTRAINT fk_cliente FOREIGN KEY(cliente_id) REFERENCES cliente(id)
+)
