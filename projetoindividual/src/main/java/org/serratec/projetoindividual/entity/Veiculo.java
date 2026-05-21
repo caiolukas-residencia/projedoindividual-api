@@ -1,8 +1,6 @@
 package org.serratec.projetoindividual.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
 
 import java.util.UUID;
 
@@ -28,23 +26,23 @@ public class Veiculo {
     private int ano;
 
     @Column(nullable = false)
-    private double valor;
+    private float valor;
 
     @Column(nullable = false, unique = true)
     private String placa;
 
     @Column(nullable = false)
-    private double maximoDesconto;
+    private float maximoDesconto;
 
     @Column(nullable = false)
     private boolean vendido;
 
     // O Double serve para a possibilidade de ser null, neste caso
     @Column
-    private Double valorVenda;
+    private Float valorVenda;
 
     public Veiculo() {}
-    public Veiculo(Cliente cliente, String marca, String modelo, int ano, double valor, String placa, double maximoDesconto, boolean vendido, Double valorVenda) {
+    public Veiculo(Cliente cliente, String marca, String modelo, int ano, float valor, String placa, float maximoDesconto, boolean vendido, Float valorVenda) {
         this.cliente = cliente;
         this.marca = marca;
         this.modelo = modelo;
@@ -97,11 +95,11 @@ public class Veiculo {
         this.ano = ano;
     }
 
-    public double getValor() {
+    public float getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
 
@@ -113,11 +111,11 @@ public class Veiculo {
         this.placa = placa;
     }
 
-    public double getMaximoDesconto() {
+    public float getMaximoDesconto() {
         return maximoDesconto;
     }
 
-    public void setMaximoDesconto(double maximoDesconto) {
+    public void setMaximoDesconto(float maximoDesconto) {
         this.maximoDesconto = maximoDesconto;
     }
 
@@ -129,11 +127,11 @@ public class Veiculo {
         this.vendido = vendido;
     }
 
-    public Double getValorVenda() {
+    public Float getValorVenda() {
         return valorVenda;
     }
 
-    public void setValorVenda(Double valorVenda) {
+    public void setValorVenda(Float valorVenda) {
         this.valorVenda = valorVenda;
     }
 }
