@@ -1,9 +1,6 @@
 package org.serratec.projetoindividual.entity;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import org.hibernate.validator.constraints.br.CPF;
 
 import java.util.UUID;
 
@@ -15,21 +12,15 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @NotBlank(message = "O nome é obrigatório")
     @Column(nullable = false)
     private String nome;
 
-    @NotBlank(message = "O telefone é obrigatório")
     @Column(nullable = false)
     private String telefone;
 
-    @NotBlank(message = "O CPF é obrigatório")
-    @CPF(message = "CPF inválido")
     @Column(nullable = false, unique = true)
     private String cpf;
 
-    @NotBlank(message = "O email é obrigatório")
-    @Email(message = "Formato de email inválido")
     @Column(nullable = false)
     private String email;
 

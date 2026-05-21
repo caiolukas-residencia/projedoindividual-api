@@ -18,27 +18,21 @@ public class Veiculo {
     @JoinColumn(name = "cliente_id", nullable = false)
     private Cliente cliente;
 
-    @NotBlank(message = "Marca é obrigatório")
     @Column(nullable = false)
     private String marca;
 
-    @NotBlank(message = "Modelo é obrigatório")
     @Column(nullable = false)
     private String modelo;
 
-    @Min(value = 1900, message = "Ano inválido")
     @Column(nullable = false)
     private int ano;
 
-    @Min(value = 1, message = "O valor deve ser maior que zero")
     @Column(nullable = false)
     private double valor;
 
-    @NotBlank(message = "Placa é obrigatório")
     @Column(nullable = false, unique = true)
     private String placa;
 
-    @Min(value = 0, message = "O desconto não pode ser negativo")
     @Column(nullable = false)
     private double maximoDesconto;
 
