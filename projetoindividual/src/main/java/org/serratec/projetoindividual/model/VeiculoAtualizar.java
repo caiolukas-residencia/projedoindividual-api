@@ -15,15 +15,15 @@ public record VeiculoAtualizar(
     String modelo,
 
     @Schema(description = "Ano de lançamento do carro", example = "1980")
-    @Min(value = 1900, message = "Ano inválido")
+    @Min(value = 1900, message = "400 - Ano inválido")
     int ano,
 
     @Schema(description = "Valor do carro", example = "200000.0")
-    @Min(value = 1, message = "O valor deve ser maior que zero")
+    @Min(value = 1, message = "400 - O valor deve ser maior que zero")
     float valor,
 
     @Schema(description = "Valor máximo de desconto permitido para a venda", example = "5000.0")
-    @Min(value = 0, message = "O desconto não pode ser negativo")
+    @Min(value = 0, message = "400 - O desconto não pode ser negativo")
     float maximoDesconto,
 
     @Schema(description = "Se o carro está ou não vendido", example = "false")

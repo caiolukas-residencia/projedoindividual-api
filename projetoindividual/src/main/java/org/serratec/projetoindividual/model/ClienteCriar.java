@@ -16,12 +16,12 @@ public record ClienteCriar(
 
    @Schema(description = "O CPF do cliente, apenas números", example = "12345678910")
    @NotBlank(message = "O CPF é obrigatório")
-   @CPF(message = "CPF inválido")
+   @CPF(message = "400 - CPF inválido")
    String cpf,
 
    @Schema(description = "Endereço de e-mail válido do cliente", example = "caio.lukas@email.com")
    @NotBlank(message = "O e-mail é obrigatório")
-   @Email(message = "E-mail inválido")
+   @Email(message = "400 - E-mail inválido")
    String email
 ) {
 }
