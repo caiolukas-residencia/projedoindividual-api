@@ -29,7 +29,7 @@ public class VeiculoService {
             throw new DadoCadastradoException("409 - Veículo já cadastrado");
         }
 
-        Cliente donoVeiculo = clienteRepository.findById(veiculoCriar.idCliente())
+        Cliente donoVeiculo = clienteRepository.findById(veiculoCriar.clienteId())
                 .orElseThrow(() -> new DadoNaoEncontradoException("404 - Cliente dono do veículo não encontrado"));
 
         Veiculo novoVeiculo = new Veiculo(donoVeiculo, veiculoCriar.marca(), veiculoCriar.modelo(), veiculoCriar.ano(), veiculoCriar.valor(), veiculoCriar.placa(), veiculoCriar.maximoDesconto(), false, null);

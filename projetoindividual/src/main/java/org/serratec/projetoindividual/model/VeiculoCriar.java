@@ -8,7 +8,7 @@ import java.util.UUID;
 public record VeiculoCriar(
     @Schema(description = "Identificador do cliente", example = "123e4567-e89b-12d3-a456-426614174000")
     @NotNull(message = "ID é obrigatório")
-    UUID idCliente,
+    UUID clienteId,
 
     @Schema(description = "Marca que distribui o carro", example = "Toyota")
     @NotBlank(message = "Marca obrigatória")

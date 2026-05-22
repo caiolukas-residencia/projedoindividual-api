@@ -41,9 +41,9 @@ public class ExceptionHandlerController {
     }
 
     // 500
-    @ExceptionHandler(ErroDoServidorException.class)
-    public ResponseEntity<ErroResposta> handleErroDoServidor(ErroDoServidorException ex) {
-        ErroResposta body = new ErroResposta(ex.getMessage());
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErroResposta> handleErroDoServidor(Exception ex) {
+        ErroResposta body = new ErroResposta("500 - Erro interno no servidor. Por favor, tente novamente mais tarde.");
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
